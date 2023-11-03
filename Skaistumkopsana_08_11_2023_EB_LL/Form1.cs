@@ -38,15 +38,11 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
             return sqlite_conn;
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             
 
-        }
-
-        
-
+        }        
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -73,20 +69,24 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
 
         private void InsertBTN_Click_1(object sender, EventArgs e)
         {
-            if (vardsTXBX.Text != "")
+            if (vards.Text != "" && uzvards.Text != "" && numurs.Text != "" && pers_kods.Text != "")
             {
                 SQLiteConnection sqlite_conn;
                 sqlite_conn = CreateConnection();
 
                 SQLiteCommand sqlite_cmd;
                 sqlite_cmd = sqlite_conn.CreateCommand();
-                sqlite_cmd.CommandText = "INSERT INTO Klients (Vards) VALUES('" + vardsTXBX.Text + "');";
+                sqlite_cmd.CommandText = "INSERT INTO Klients (Vards, Uzvards, Tel_num, P_K) VALUES('" + vards.Text + "', '" + uzvards.Text + "', '" + numurs.Text + "', '" + pers_kods.Text + "');";
                 sqlite_cmd.ExecuteNonQuery();
             }
             else
             {
-                MessageBox.Show("Ludzu ievadiet Vardu");
+                MessageBox.Show("Ludzu aizpildiet visus ievades laukus!!!");
             }
+
+            Form2 f2 = new Form2();
+            f2.Show();
+            Visible = false;
         }
     }
 

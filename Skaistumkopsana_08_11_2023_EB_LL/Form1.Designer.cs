@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Klients = new System.Windows.Forms.DataGridView();
             this.vards = new System.Windows.Forms.TextBox();
             this.KONEKCIJA = new System.Windows.Forms.Button();
             this.InsertBTN = new System.Windows.Forms.Button();
@@ -40,23 +40,24 @@
             this.numurs = new System.Windows.Forms.TextBox();
             this.pers_kods = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.nakama1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Klients)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Klients
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 92);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(752, 222);
-            this.dataGridView1.TabIndex = 0;
+            this.Klients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Klients.Location = new System.Drawing.Point(13, 92);
+            this.Klients.Margin = new System.Windows.Forms.Padding(4);
+            this.Klients.Name = "Klients";
+            this.Klients.RowHeadersWidth = 51;
+            this.Klients.Size = new System.Drawing.Size(752, 271);
+            this.Klients.TabIndex = 0;
             // 
             // vards
             // 
             this.vards.Location = new System.Drawing.Point(916, 103);
-            this.vards.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vards.Margin = new System.Windows.Forms.Padding(4);
             this.vards.Name = "vards";
             this.vards.Size = new System.Drawing.Size(121, 22);
             this.vards.TabIndex = 1;
@@ -64,7 +65,7 @@
             // KONEKCIJA
             // 
             this.KONEKCIJA.Location = new System.Drawing.Point(276, 13);
-            this.KONEKCIJA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KONEKCIJA.Margin = new System.Windows.Forms.Padding(4);
             this.KONEKCIJA.Name = "KONEKCIJA";
             this.KONEKCIJA.Size = new System.Drawing.Size(227, 71);
             this.KONEKCIJA.TabIndex = 3;
@@ -75,7 +76,7 @@
             // InsertBTN
             // 
             this.InsertBTN.Location = new System.Drawing.Point(804, 234);
-            this.InsertBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.InsertBTN.Margin = new System.Windows.Forms.Padding(4);
             this.InsertBTN.Name = "InsertBTN";
             this.InsertBTN.Size = new System.Drawing.Size(233, 60);
             this.InsertBTN.TabIndex = 4;
@@ -150,11 +151,22 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Lūdzu ievadiet savus datus!";
             // 
+            // nakama1
+            // 
+            this.nakama1.Location = new System.Drawing.Point(907, 330);
+            this.nakama1.Name = "nakama1";
+            this.nakama1.Size = new System.Drawing.Size(150, 35);
+            this.nakama1.TabIndex = 13;
+            this.nakama1.Text = "Nākamā lappuse";
+            this.nakama1.UseVisualStyleBackColor = true;
+            this.nakama1.Click += new System.EventHandler(this.nakama1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 327);
+            this.ClientSize = new System.Drawing.Size(1067, 376);
+            this.Controls.Add(this.nakama1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pers_kods);
             this.Controls.Add(this.numurs);
@@ -166,12 +178,12 @@
             this.Controls.Add(this.InsertBTN);
             this.Controls.Add(this.KONEKCIJA);
             this.Controls.Add(this.vards);
-            this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.Klients);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Klients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +191,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Klients;
         private System.Windows.Forms.TextBox vards;
         private System.Windows.Forms.Button KONEKCIJA;
         private System.Windows.Forms.Button InsertBTN;
@@ -191,6 +203,7 @@
         private System.Windows.Forms.TextBox numurs;
         private System.Windows.Forms.TextBox pers_kods;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button nakama1;
     }
 }
 

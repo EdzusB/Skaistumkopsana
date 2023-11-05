@@ -63,7 +63,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
             using (sTable = new DataTable())
             {
                 sqlda.Fill(sTable);
-                dataGridView1.DataSource = sTable;
+                Klients.DataSource = sTable;
             }
         }
 
@@ -84,6 +84,11 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                 MessageBox.Show("Ludzu aizpildiet visus ievades laukus!!!");
             }
 
+            
+        }
+
+        private void nakama1_Click(object sender, EventArgs e)
+        {
             Form2 f2 = new Form2();
             f2.Show();
             Visible = false;

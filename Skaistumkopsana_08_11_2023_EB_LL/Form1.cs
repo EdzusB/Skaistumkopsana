@@ -89,8 +89,8 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
 
         private void nakama1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
+            Form3 f3 = new Form3();
+            f3.Show();
             Visible = false;
         }
     }

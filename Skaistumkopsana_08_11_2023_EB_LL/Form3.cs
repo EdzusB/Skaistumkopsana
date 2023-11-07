@@ -130,20 +130,48 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
 
         private void button1_Click(object sender, EventArgs e)
         {
-                if (textBox1.Text != "")
+
+            if (textBox1.Text != "")
+            {
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+
+                // Check if Pakalp_pieejams is "Nē" before updating
+                sqlite_cmd.CommandText = "SELECT Pakalp_pieejams FROM SK_Salons WHERE Pakalp_ID = @Pakalp_ID";
+                sqlite_cmd.Parameters.AddWithValue("@Pakalp_ID", textBox1.Text);
+
+                object result = sqlite_cmd.ExecuteScalar();
+
+                if (result != null && result.ToString() == "Nē")
                 {
-                    SQLiteConnection sqlite_conn; 
-                    sqlite_conn = CreateConnection();
-                    SQLiteCommand sqlite_cmd;
-                    sqlite_cmd = sqlite_conn.CreateCommand();
-                    sqlite_cmd.CommandText = "DELETE FROM SK_Salons WHERE Pakalp_ID=" + textBox1.Text + ";";
-                    sqlite_cmd.ExecuteNonQuery();
-                textBox1.Clear();
+                    MessageBox.Show("Izvēlētais pakalpojums nav pieejams!");
                 }
                 else
                 {
-                    MessageBox.Show("Lūdzu ievadiet nosaukumu");
-                }           
+                    sqlite_cmd.Parameters.Clear();
+                    sqlite_cmd.CommandText = "UPDATE SK_Salons SET Pakalp_pieejams = CASE WHEN Pakalp_pieejams = 'Jā' THEN 'Nē' ELSE 'Jā' END WHERE Pakalp_ID = @Pakalp_ID";
+                    sqlite_cmd.Parameters.AddWithValue("@Pakalp_ID", textBox1.Text);
+
+                    int rowsAffected = sqlite_cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Atjaunošana veiksmīga. Ietekmētie rindiņu skaits: " + rowsAffected);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nav atrastas atbilstošas ierakstu.");
+                    }
+                }
+
+                textBox1.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Lūdzu ievadiet nosaukumu");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

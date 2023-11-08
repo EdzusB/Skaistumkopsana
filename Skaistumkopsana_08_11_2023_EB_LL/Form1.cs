@@ -77,6 +77,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                 SQLiteCommand sqlite_cmd;
                 sqlite_cmd = sqlite_conn.CreateCommand();
                 sqlite_cmd.CommandText = "INSERT INTO Klients (Vards, Uzvards, Tel_num, P_K) VALUES('" + vards.Text + "', '" + uzvards.Text + "', '" + numurs.Text + "', '" + pers_kods.Text + "');";
+
                 sqlite_cmd.ExecuteNonQuery();
             }
             else

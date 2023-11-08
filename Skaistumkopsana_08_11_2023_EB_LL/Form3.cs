@@ -146,7 +146,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
 
                 if (result != null && result.ToString() == "Nē")
                 {
-                    MessageBox.Show("Izvēlētais pakalpojums nav pieejams!");
+                    MessageBox.Show("Izvēlētais pakalpojums jau ir aizņemts!");
                 }
                 else
                 {
@@ -158,7 +158,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Atjaunošana veiksmīga. Ietekmētie rindiņu skaits: " + rowsAffected);
+                        MessageBox.Show("Pieraksts veiksmīgi veikts!");
                     }
                     else
                     {
@@ -177,6 +177,11 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

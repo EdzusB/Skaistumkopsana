@@ -55,5 +55,147 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                 Prece.DataSource = sTable;
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString() == "Balinātājs")
+            {
+                CreateConnection();
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM Prece WHERE Preces_veids = 'Balinātājs'";
+
+
+                DataTable sTable;
+                SQLiteDataAdapter sqlda = new SQLiteDataAdapter(sqlite_cmd);
+                using (sTable = new DataTable())
+                {
+                    sqlda.Fill(sTable);
+                    Prece.DataSource = sTable;
+                }
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Matu krāsa")
+            {
+                CreateConnection();
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM Prece WHERE Preces_veids = 'Matu krāsa'";
+
+
+                DataTable sTable;
+                SQLiteDataAdapter sqlda = new SQLiteDataAdapter(sqlite_cmd);
+                using (sTable = new DataTable())
+                {
+                    sqlda.Fill(sTable);
+                    Prece.DataSource = sTable;
+                }
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Veidošanas Losjoni")
+            {
+                CreateConnection();
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM Prece WHERE Preces_veids = 'Veidošanas Losjoni'";
+
+
+                DataTable sTable;
+                SQLiteDataAdapter sqlda = new SQLiteDataAdapter(sqlite_cmd);
+                using (sTable = new DataTable())
+                {
+                    sqlda.Fill(sTable);
+                    Prece.DataSource = sTable;
+                }
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Matu Laka")
+            {
+                CreateConnection();
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM Prece WHERE Preces_veids = 'Matu Laka'";
+
+
+                DataTable sTable;
+                SQLiteDataAdapter sqlda = new SQLiteDataAdapter(sqlite_cmd);
+                using (sTable = new DataTable())
+                {
+                    sqlda.Fill(sTable);
+                    Prece.DataSource = sTable;
+                }
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Nagu lakas noņēmējs")
+            {
+                CreateConnection();
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM Prece WHERE Preces_veids = 'Nagu lakas noņēmējs'";
+
+
+                DataTable sTable;
+                SQLiteDataAdapter sqlda = new SQLiteDataAdapter(sqlite_cmd);
+                using (sTable = new DataTable())
+                {
+                    sqlda.Fill(sTable);
+                    Prece.DataSource = sTable;
+                }
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Nagu laka")
+            {
+                CreateConnection();
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM Prece WHERE Preces_veids = 'Nagu laka'";
+
+
+                DataTable sTable;
+                SQLiteDataAdapter sqlda = new SQLiteDataAdapter(sqlite_cmd);
+                using (sTable = new DataTable())
+                {
+                    sqlda.Fill(sTable);
+                    Prece.DataSource = sTable;
+                }
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Gēlu lakas")
+            {
+                CreateConnection();
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = CreateConnection();
+
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM Prece WHERE Preces_veids = 'Gēlu lakas'";
+
+
+                DataTable sTable;
+                SQLiteDataAdapter sqlda = new SQLiteDataAdapter(sqlite_cmd);
+                using (sTable = new DataTable())
+                {
+                    sqlda.Fill(sTable);
+                    Prece.DataSource = sTable;
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

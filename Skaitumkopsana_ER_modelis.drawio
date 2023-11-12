@@ -1,19 +1,19 @@
-<mxfile host="app.diagrams.net" modified="2023-11-08T06:35:25.720Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="cn6fx7cCAWqOYbNLw_hj" version="22.0.8" type="device">
+<mxfile host="app.diagrams.net" modified="2023-11-12T16:49:50.162Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="cZPkaw86sEVP3GTZCwar" version="21.3.1" type="device">
   <diagram name="Lapa-1" id="njz2QWvsx2qv-kqK_5ru">
-    <mxGraphModel dx="1434" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1050" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="9OF9uhAWDgtT1-VAauPH-3" value="Klients" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="290" y="110" width="160" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="9OF9uhAWDgtT1-VAauPH-4" value="ID(integer)(PK)&lt;br&gt;Vards(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Uzvards(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Tel_num(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;P_K(Text)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="9OF9uhAWDgtT1-VAauPH-3" vertex="1">
+        <mxCell id="9OF9uhAWDgtT1-VAauPH-4" value="ID(Text)(PK)&lt;br&gt;Vards(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Uzvards(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Tel_num(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;P_K(Text)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="9OF9uhAWDgtT1-VAauPH-3" vertex="1">
           <mxGeometry y="50" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="9OF9uhAWDgtT1-VAauPH-5" value="Prece" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="20" y="240" width="160" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="9OF9uhAWDgtT1-VAauPH-6" value="ID(integer)(PK)&lt;br&gt;Preces_veids(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Nosaukums(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Daudzums(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Cena(Numeric)&lt;br&gt;Atversanas_laiks(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Termins(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="9OF9uhAWDgtT1-VAauPH-5" vertex="1">
+        <mxCell id="9OF9uhAWDgtT1-VAauPH-6" value="ID(Integer)(PK)&lt;br&gt;Preces_veids(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Nosaukums(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Daudzums(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Cena(Numeric)&lt;br&gt;Atversanas_laiks(Text)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Termins(Text)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="9OF9uhAWDgtT1-VAauPH-5" vertex="1">
           <mxGeometry y="50" width="160" height="110" as="geometry" />
         </mxCell>
         <mxCell id="9OF9uhAWDgtT1-VAauPH-7" value="SK_Salons" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -25,7 +25,7 @@
         <mxCell id="9OF9uhAWDgtT1-VAauPH-1" value="Klienta_pakalp" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="600" y="240" width="180" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="9OF9uhAWDgtT1-VAauPH-2" value="Klienta_pakalp_ID(integer)(PK)&lt;br&gt;Klienta_ID(integer)(FK)&lt;br&gt;Preces_ID(integer)(FK)&lt;br&gt;Pakalp_ID(integer)(FK)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="9OF9uhAWDgtT1-VAauPH-1" vertex="1">
+        <mxCell id="9OF9uhAWDgtT1-VAauPH-2" value="Klienta_pakalp_ID(integer)(PK)&lt;br&gt;Klienta_ID(Text)(FK)&lt;br&gt;Preces_ID(integer)(FK)&lt;br&gt;Pakalp_ID(integer)(FK)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="9OF9uhAWDgtT1-VAauPH-1" vertex="1">
           <mxGeometry y="50" width="180" height="70" as="geometry" />
         </mxCell>
         <mxCell id="9OF9uhAWDgtT1-VAauPH-9" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.371;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.15;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="9OF9uhAWDgtT1-VAauPH-2" target="9OF9uhAWDgtT1-VAauPH-4" edge="1">

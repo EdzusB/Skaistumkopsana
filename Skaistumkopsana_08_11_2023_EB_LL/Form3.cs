@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-using System.Data;
-
+using System.IO;
 namespace Skaistumkopsana_08_11_2023_EB_LL
 {
     public partial class Form3 : Form
@@ -28,7 +27,23 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
             }
             return sqlite_conn;
         }
+        public void Tekstinators()
+        {
+            try
+            {
+                // Use StreamWriter with FileMode.Append to append text to the existing file
+                using (TextWriter text1 = new StreamWriter(@"C:\visual\salon\Skaistumkopsana\Personas_dati.txt", true))
+                {
+                    text1.WriteLine("Personas izvēlētais pakalpojuma veids ir: " + PakalpVeidi.SelectedItem );
+                    text1.WriteLine("Pakalpojuma ID: " + kaste1.Text);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
         public Form3()
         {
             InitializeComponent();
@@ -50,7 +65,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "Pedikīrs")
+            if (PakalpVeidi.SelectedItem.ToString() == "Pedikīrs")
             {
                 CreateConnection();
                 SQLiteConnection sqlite_conn;
@@ -69,7 +84,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                     dataGridView1.DataSource = sTable;
                 }
             }
-            else if (comboBox1.SelectedItem.ToString() == "Manikīrs")
+            else if (PakalpVeidi.SelectedItem.ToString() == "Manikīrs")
             {
                 CreateConnection();
                 SQLiteConnection sqlite_conn;
@@ -88,7 +103,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                     dataGridView1.DataSource = sTable;
                 }
             }
-            else if (comboBox1.SelectedItem.ToString() == "Matu_veidošana")
+            else if (PakalpVeidi.SelectedItem.ToString() == "Matu_veidošana")
             {
                 CreateConnection();
                 SQLiteConnection sqlite_conn;
@@ -107,7 +122,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                     dataGridView1.DataSource = sTable;
                 }
             }
-            else if (comboBox1.SelectedItem.ToString() == "Matu_krāsošana")
+            else if (PakalpVeidi.SelectedItem.ToString() == "Matu_krāsošana")
             {
                 CreateConnection();
                 SQLiteConnection sqlite_conn;
@@ -131,7 +146,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (textBox1.Text != "")
+            if (kaste1.Text != "")
             {
                 SQLiteConnection sqlite_conn;
                 sqlite_conn = CreateConnection();
@@ -140,7 +155,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
 
                 // Check if Pakalp_pieejams is "Nē" before updating
                 sqlite_cmd.CommandText = "SELECT Pakalp_pieejams FROM SK_Salons WHERE Pakalp_ID = @Pakalp_ID";
-                sqlite_cmd.Parameters.AddWithValue("@Pakalp_ID", textBox1.Text);
+                sqlite_cmd.Parameters.AddWithValue("@Pakalp_ID", kaste1.Text);
 
                 object result = sqlite_cmd.ExecuteScalar();
 
@@ -152,7 +167,7 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                 {
                     sqlite_cmd.Parameters.Clear();
                     sqlite_cmd.CommandText = "UPDATE SK_Salons SET Pakalp_pieejams = CASE WHEN Pakalp_pieejams = 'Jā' THEN 'Nē' ELSE 'Jā' END WHERE Pakalp_ID = @Pakalp_ID";
-                    sqlite_cmd.Parameters.AddWithValue("@Pakalp_ID", textBox1.Text);
+                    sqlite_cmd.Parameters.AddWithValue("@Pakalp_ID", kaste1.Text);
 
                     int rowsAffected = sqlite_cmd.ExecuteNonQuery();
 
@@ -164,14 +179,20 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
                     {
                         MessageBox.Show("Nav atrastas atbilstošas ierakstu.");
                     }
-                }
 
-                textBox1.Clear();
+                    sqlite_cmd.CommandText = "INSERT INTO Klienta_pakalp (Pakalp_ID) VALUES(@Pakalp_ID)";
+                    sqlite_cmd.Parameters.AddWithValue("@Pakalp_ID", kaste1.Text);
+
+                    sqlite_cmd.ExecuteNonQuery();
+                }
+                Tekstinators();
+                kaste1.Clear();
             }
             else
             {
                 MessageBox.Show("Lūdzu ievadiet nosaukumu");
             }
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

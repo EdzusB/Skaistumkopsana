@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-using System.Data;
+using System.IO;
+
 
 namespace Skaistumkopsana_08_11_2023_EB_LL
 {
@@ -17,6 +18,24 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
         public Form2()
         {
             InitializeComponent();
+        }
+        public void Tekstinators()
+        {
+            try
+            {
+                // Use StreamWriter with FileMode.Append to append text to the existing file
+                using (TextWriter text1 = new StreamWriter(@"C:\visual\salon\Skaistumkopsana\Personas_dati.txt", true))
+                {
+                    text1.WriteLine("Personas izvēlētais preces veids ir: " + comboBox1.SelectedItem );
+                    text1.WriteLine("Preces ID: " + textBox1.Text);
+                }
+
+                Console.WriteLine("Data successfully appended to the text file.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
         }
         static SQLiteConnection CreateConnection()
         {
@@ -196,6 +215,11 @@ namespace Skaistumkopsana_08_11_2023_EB_LL
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Tekstinators();
         }
     }
 }
